@@ -12,6 +12,8 @@ export class CurrencyConverterComponent implements OnInit {
   amount2: number = 0;
   currency2: string = 'USD';
   conversionRates: { [key: string]: number } = {};
+  exchangeRate1: string = '';
+  exchangeRate2: string = '';
 
   constructor(private http: HttpClient) { }
 
@@ -35,6 +37,8 @@ export class CurrencyConverterComponent implements OnInit {
       } else {
         const rate = this.conversionRates[this.currency2] / this.conversionRates[this.currency1];
         this.amount2 = this.amount1 * rate;
+        this.exchangeRate1 = `1 ${this.currency1} = ${rate.toFixed(2)} ${this.currency2}`;
+        this.exchangeRate2 = `1 ${this.currency2} = ${(1 / rate).toFixed(2)} ${this.currency1}`;
       }
     } else {
       if (this.currency2 === this.currency1) {
@@ -42,6 +46,8 @@ export class CurrencyConverterComponent implements OnInit {
       } else {
         const rate = this.conversionRates[this.currency1] / this.conversionRates[this.currency2];
         this.amount1 = this.amount2 * rate;
+        this.exchangeRate1 = `1 ${this.currency1} = ${(1 / rate).toFixed(2)} ${this.currency2}`;
+        this.exchangeRate2 = `1 ${this.currency2} = ${rate.toFixed(2)} ${this.currency1}`;
       }
     }
   }

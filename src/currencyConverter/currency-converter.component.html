@@ -1,27 +1,47 @@
-<div>
-  <h2>Конвертер валют</h2>
-  <div>
-    <input
-      type="number"
-      [(ngModel)]="amount1"
-      (ngModelChange)="convertCurrency(1)"
-    />
-    <select [(ngModel)]="currency1" (ngModelChange)="convertCurrency(1)">
-      <option value="UAH">UAH</option>
-      <option value="USD">USD</option>
-      <option value="EUR">EUR</option>
-    </select>
+<section class="converter container">
+  <h1 class="converter__title">Currency converter</h1>
+  <div class="converter__exchange-container">
+    <div class="converter__exchange-column">
+      <p class="converter__exchange-description">You have</p>
+      <div class="converter__exchange-input-container">
+        <input
+          type="number"
+          class="converter__input"
+          [(ngModel)]="amount1"
+          (ngModelChange)="convertCurrency(1)"
+        />
+        <select
+          [(ngModel)]="currency1"
+          (ngModelChange)="convertCurrency(1)"
+          class="converter__select"
+        >
+          <option value="UAH" class="converter__option">UAH</option>
+          <option value="USD" class="converter__option">USD</option>
+          <option value="EUR" class="converter__option">EUR</option>
+        </select>
+      </div>
+      <p class="converter__exchange-rate">{{ exchangeRate1 }}</p>
+    </div>
+    <div class="converter__exchange-column">
+      <p class="converter__exchange-description">You will get</p>
+      <div class="converter__exchange-input-container">
+        <input
+          type="number"
+          class="converter__input"
+          [(ngModel)]="amount2"
+          (ngModelChange)="convertCurrency(2)"
+        />
+        <select
+          [(ngModel)]="currency2"
+          (ngModelChange)="convertCurrency(2)"
+          class="converter__select"
+        >
+          <option value="UAH" class="converter__option">UAH</option>
+          <option value="USD" class="converter__option">USD</option>
+          <option value="EUR" class="converter__option">EUR</option>
+        </select>
+      </div>
+      <p class="converter__exchange-rate">{{ exchangeRate2 }}</p>
+    </div>
   </div>
-  <div>
-    <input
-      type="number"
-      [(ngModel)]="amount2"
-      (ngModelChange)="convertCurrency(2)"
-    />
-    <select [(ngModel)]="currency2" (ngModelChange)="convertCurrency(2)">
-      <option value="UAH">UAH</option>
-      <option value="USD">USD</option>
-      <option value="EUR">EUR</option>
-    </select>
-  </div>
-</div>
+</section>

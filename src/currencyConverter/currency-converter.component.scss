@@ -1,62 +1,72 @@
 .container {
-  max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-input,
-select {
   width: 100%;
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s ease;
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: 480px;
+
+  @media (min-width: 768px) {
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: 768px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1280px;
+  }
 }
 
-input:focus,
-select:focus {
-  outline: none;
-  border-color: #007bff;
-}
-
-button {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin-top: 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.result {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
+.converter__title {
   text-align: center;
+  text-transform: capitalize;
+}
+
+.converter__exchange-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.converter__exchange-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 16px;
+  border: 1px solid #cdd7e7;
+  border-radius: 2px;
+}
+
+.converter__exchange-description,
+.converter__exchange-rate {
+  font-size: 12px;
+  line-height: 14px;
+  color: #2d2d2d;
+}
+
+.converter__exchange-input-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.converter__input {
+  padding: 5px 10px;
+  width: 100%;
+  border: unset;
+  border-radius: 10px;
+  font-size: 28px;
+  line-height: 33px;
+  font-weight: 700;
+  color: #2d2d2d;
+  background-color: #f3f3f6;
+}
+
+.converter__select {
+  border-color: #f3f3f6;
 }
