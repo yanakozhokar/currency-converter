@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { CurrencyConverterComponent } from './currency-converter.component';
 
 @NgModule({
@@ -16,5 +15,4 @@ import { CurrencyConverterComponent } from './currency-converter.component';
     CurrencyConverterComponent
   ]
 })
-    
 export class CurrencyConverterModule { }
