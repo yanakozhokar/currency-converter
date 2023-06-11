@@ -1,0 +1,44 @@
+<div>
+  <h1>Курс валют</h1>
+  <p>USD to UAH: {{ usdToUah }}</p>
+  <p>EUR to UAH: {{ eurToUah }}</p>
+</div>
+
+<div>
+  <h2>Конвертер валют</h2>
+  <div>
+    <label for="inputCurrency1">Первая валюта:</label>
+    <input
+      id="inputCurrency1"
+      type="number"
+      [(ngModel)]="inputCurrency1"
+      (ngModelChange)="convertCurrency(1)"
+    />
+    <select
+      [(ngModel)]="selectedCurrency1"
+      (ngModelChange)="convertCurrency(1)"
+    >
+      <option value="UAH">UAH</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="inputCurrency2">Вторая валюта:</label>
+    <input
+      id="inputCurrency2"
+      type="number"
+      [(ngModel)]="inputCurrency2"
+      (ngModelChange)="convertCurrency(2)"
+    />
+    <select
+      [(ngModel)]="selectedCurrency2"
+      (ngModelChange)="convertCurrency(2)"
+    >
+      <option value="UAH">UAH</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+    </select>
+  </div>
+</div>
