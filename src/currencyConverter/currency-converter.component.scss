@@ -19,6 +19,8 @@
 }
 
 .converter__title {
+  font-size: 24px;
+  font-weight: 700;
   text-align: center;
   text-transform: capitalize;
 }
@@ -68,5 +70,6 @@
 }
 
 .converter__select {
-  border-color: #f3f3f6;
+  border-color: #d2dbe9;
+  border-radius: 5px;
 }
